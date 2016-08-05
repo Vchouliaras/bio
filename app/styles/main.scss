@@ -1,31 +1,123 @@
 // bower:scss
 // endbower
 
-body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+
+@import "compass";
+@import "breakpoint";
+// @import "susy";
+// @import "variables/fonts.scss";
+// @import "variables/icons-sprite.scss";
+// @import "abstractions/mixins.scss";
+// @import "base/uniform.scss";
+// @import "base/slick.scss";
+// @import "bootstrap/variables";
+// @import "bootstrap/mixins";
+// @import "bootstrap/tooltip";
+
+
+$mob: 320px;
+$tab: 640px;
+$desk: 960px;
+$wide: 1280px;
+
+@font-face {
+  font-family: 'UnicaOne-Regular';
+  src: url('../fonts/UnicaOne-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/UnicaOne-Regular.woff') format('woff'),
+        url('../fonts/UnicaOne-Regular.ttf')  format('truetype'),
+        url('../fonts/UnicaOne-Regular.svg#UnicaOne-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+html {
+  background: url('../images/bg-sky.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+body{
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'UnicaOne-Regular', sans-serif;
+}
+
+.overlay {
+  background-image: url('../images/overlay.png');
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+.content {
+  @include breakpoint($tab) {
+    display:none! important;
+  }
+  margin: 0 auto;
+  paddding: 0 20px;
+  position: fixed;
+  width: 500px;
+  height: 250px;
+  z-index: 15;
+  top: 50%;
+  left: 50%;
+  margin: -120px 0 0 -250px;
+  h4 {
+    padding: 0;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #000;
+  }
+  .typed,#typed {
+    font-size: 25px;
+  }
+  .social {
+    &.hidden {
+      display: none;
+    }
+    padding: 30px 0 0 0;
+    text-align:center;
+  }
+  .logos {
+    list-style-type: none;
+    padding:25px 0 0 0;
+    margin:0;
+    li {
+      display: inline-block;
+      &:not(:first-child) {
+        padding-left: 30px;
+      }
+    }
   }
 }
 
-.browserupgrade {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
+
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 1s infinite;
+    -moz-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@keyframes blink{
+    0% { @include opacity(1); }
+    50% { @include opacity(0); }
+    100% { @include opacity(1); }
+}
+@-webkit-keyframes blink{
+    0% { @include opacity(1); }
+    50% { @include opacity(0); }
+    100% { @include opacity(1); }
+}
+@-moz-keyframes blink{
+    0% { @include opacity(1); }
+    50% { @include opacity(0); }
+    100% { @include opacity(1); }
 }
