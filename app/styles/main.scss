@@ -1,33 +1,16 @@
 // bower:scss
 // endbower
 
-
 @import "compass";
 @import "breakpoint";
-// @import "susy";
-// @import "variables/fonts.scss";
-// @import "variables/icons-sprite.scss";
-// @import "abstractions/mixins.scss";
-// @import "base/uniform.scss";
-// @import "base/slick.scss";
-// @import "bootstrap/variables";
-// @import "bootstrap/mixins";
-// @import "bootstrap/tooltip";
+@import "variables/fonts.scss";
+@import "variables/breakpoints.scss";
+@import "base/normalize.scss";
 
-
-$mob: 320px;
-$tab: 640px;
-$desk: 960px;
-$wide: 1280px;
-
-@font-face {
-  font-family: 'UnicaOne-Regular';
-  src: url('../fonts/UnicaOne-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/UnicaOne-Regular.woff') format('woff'),
-        url('../fonts/UnicaOne-Regular.ttf')  format('truetype'),
-        url('../fonts/UnicaOne-Regular.svg#UnicaOne-Regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
+.no-js {
+  .content {
+    display: block !important;
+  }
 }
 
 html {
@@ -50,27 +33,32 @@ body{
   left: 0;
 }
 .content {
-  @include breakpoint($tab) {
-    display:none! important;
-  }
-  margin: 0 auto;
-  paddding: 0 20px;
   position: fixed;
-  width: 500px;
   height: 250px;
   z-index: 15;
   top: 50%;
-  left: 50%;
-  margin: -120px 0 0 -250px;
+  padding: 0 20px;
+  margin: -120px auto 0 auto;
+  @include breakpoint($tab) {
+    width: 500px;
+    margin: -120px 0 0 -250px;
+    left: 50%;
+  }
   h4 {
     padding: 0;
     margin: 0 0 10px 0;
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 2px;
     color: #000;
+    @include breakpoint($tab) {
+      font-size: 16px;
+    }
   }
   .typed,#typed {
-    font-size: 25px;
+    font-size: 23px;
+    @include breakpoint($tab) {
+      font-size: 25px;
+    }
   }
   .social {
     &.hidden {
