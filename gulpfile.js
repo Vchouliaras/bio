@@ -15,7 +15,11 @@ gulp.task('styles', function(){
     .pipe($.sass.sync({
       outputStyle: 'expanded',
       precision: 10,
-      includePaths: ['.']
+      includePaths: [
+      '.',
+      './node_modules/breakpoint-sass/stylesheets/',
+      './node_modules/compass-mixins/lib/',
+      ]
     }).on('error', $.sass.logError))
     .pipe($.autoprefixer({browsers: ['> 1%', 'last 2 versions', 'Firefox ESR']}))
     .pipe($.sourcemaps.write())
