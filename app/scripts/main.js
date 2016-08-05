@@ -1,9 +1,9 @@
 (function($) {
   $(function() {
-    $("#typed").typed({
+    $('#typed').typed({
       stringsElement: $('body').find('.strings-to-type'),
       startDelay: 500,
-      cursorChar: " _",
+      cursorChar: ' _',
       callback: function(){
         $('body').find('.social').removeClass('hidden')
           .css('opacity', 0).animate({'opacity': '1'}, 500);
