@@ -6,7 +6,7 @@
       cursorChar: ' _',
       callback: function(){
         $('body').find('.social').removeClass('hidden')
-          .css('opacity', 0).animate({'opacity': '1'}, 500);
+          .css('opacity', 0).animate({'opacity': '1'}, 300);
       }
     });
   });
