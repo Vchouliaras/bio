@@ -1,5 +1,7 @@
 {
- "name": "App",
+ "name": "Vchouliaras",
+ "short_name": "Vasileios Chouliaras",
+ "description": "Vasileios Chouliaras Software Engineer",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",
